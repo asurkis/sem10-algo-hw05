@@ -9,7 +9,7 @@
 Пусть $\H$ --- 2-независимое семейство хэш-функций. Тогда
 \begin{gather*}
     \forall x_1, x_2 \in X, x_1 \neq x_2 : \Prb{h \in \H} \left[ h(x_1) = h(x_2) \right] = \\
-    = \sum_{y \in Y} \Prb{h \in \H} \left[ \Bigl( h(x_1) = y \Bigr) \land \Bigl( h(x_2) = y \Bigr) \right] = \\
+    = \Prb{h \in \H} \sum_{y \in Y} \left[ \Bigl( h(x_1) = y \Bigr) \land \Bigl( h(x_2) = y \Bigr) \right] = \\
     = \sum_{y \in Y} \frac{1}{|Y|^2} = \frac{1}{|Y|} \leq \frac{1}{|Y|}
 \end{gather*}
 
