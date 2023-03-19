@@ -1,7 +1,7 @@
 build: pdf
 
 pdf: main.tex out
-	pdflatex --jobname=Algo_Surkis_Anton_HW04 --shell-escape --output-directory=out $<
+	pdflatex --jobname=Algo_Surkis_Anton_HW05 --shell-escape --output-directory=out $<
 
 out:
 	mkdir -p out
