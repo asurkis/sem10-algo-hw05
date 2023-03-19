@@ -11,6 +11,9 @@
 то смещение на $i \cdot k$ от её начала
 даст нам более короткую степень.
 Тогда алгоритм выглядит так:
+
+\noindent
+\begin{minipage}{\hsize}
 \begin{algorithmic}
     \For{$i=1,\ldots,n$}
         \State $c_i \gets 1$
@@ -33,6 +36,7 @@
     \EndFor
     \State $s[i'; j' + k)$ --- ответ
 \end{algorithmic}
+\end{minipage}
 
 Фактически, этот алгоритм проходит по всем
 лево-максимальным подстрокам-степеням,

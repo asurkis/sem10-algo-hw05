@@ -4,6 +4,9 @@
 
 \subsection{Решение}
 Как проверить, что строка подходит под образец:
+
+\noindent
+\begin{minipage}{\hsize}
 \begin{algorithmic}
     \Function{Compare}{$s, r, k$}
         \Comment{$|s| = |r|$}
@@ -21,6 +24,7 @@
         \EndIf
     \EndFunction
 \end{algorithmic}
+\end{minipage}
 
 Можно заметить, что после предподсчёта для хэширования подстрок
 функция \textsc{Compare} будет работать за $\O(k \log n)$.
