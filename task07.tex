@@ -1,3 +1,30 @@
 \section{Задача 7}
 % \onlygroup{Мишунина}
 Найти подстроку в тексте. При сравнении строк, если несовпадений символов было не более~$k$, строки считаются равными. $\O(nk \log n)$.
+
+\subsection{Решение}
+Как проверить, что строка подходит под образец:
+\begin{algorithmic}
+    \Function{Compare}{$s, r, k$}
+        \Comment{$|s| = |r|$}
+        \If{$k = 0$}
+            \State \Return $s = r$
+            \Comment{$\O(1)$ по хэшированию}
+        \Else
+            \State $p \gets \Call{LongestPrefix}{s, r}$
+            \Comment{$\O(\log n)$}
+            \If{$|p| = |s|$}
+                \State \Return $1$
+            \Else
+                \State \Return $\Call{Compare}{s[|p| + 1; |s|], r[|p| + 1; |r|], k - 1}$
+            \EndIf
+        \EndIf
+    \EndFunction
+\end{algorithmic}
+
+Можно заметить, что после предподсчёта для хэширования подстрок
+функция \textsc{Compare} будет работать за $\O(k \log n)$.
+Всего существует $\O(n)$ подстрок, которые могут совпасть с искомой по длине,
+следовательно, сравнив их все, получаем время работы $\O(nk \log n)$.
+
+Искомый алгоритм найден.
