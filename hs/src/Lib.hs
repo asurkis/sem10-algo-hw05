@@ -1,10 +1,10 @@
 module Lib where
 
 bin :: [Integer]
-bin=fst<$>go where go=(0,2):((\(x,p)->(x*p+p-1-x,p*p))<$>go)
+bin=fst<$>iterate(\(x,p)->(x*p+p-1-x,p*p))(0,2)
 
 dec :: [Integer]
-dec=fst<$>go where go=(0,10):((\(x,p)->(x*p+div (p-1) 9-x,p*p))<$>go)
+dec=fst<$>iterate(\(x,p)->(x*p+div(p-1)9-x,p*p))(0,10)
 
 str :: [String]
-str=(\(x,p)->tail$show$p+x)<$>go where go=(0::Integer,10):((\(x,p)->(x*p+div (p-1) 9-x,p*p))<$>go)
+str=(\(x,p)->tail$show$p+x)<$>iterate(\(x,p)->(x*p+div(p-1)9-x,p*p))(0::Integer,10)
